@@ -1,0 +1,19 @@
+<h1>Formulario de edicion</h1>
+
+<form action="/edit/{{pelicula._id}}" method="POST">
+
+    <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input name='nombre' type="text" class="form-control" id="nombre" placeholder="Duro de matar"
+            value="{{pelicula.nombre}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input name='genero' type="text" class="form-control" id="genero" placeholder="Acción"
+            value="{{pelicula.genero}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input name='fecha' type="number" class="form-control" id="fecha" placeholder="2022" value="{{pelicula.fecha}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
