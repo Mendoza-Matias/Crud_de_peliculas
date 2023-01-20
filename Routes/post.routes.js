@@ -25,8 +25,9 @@ rutaPost.post('/create/add', upload.single('img'), async (req, res) => {
         nombre: req.body.nombre,
         fecha: req.body.fecha,
         genero: req.body.genero,
-        img: req.file.path
+        img: '../public/uploads/' + req.file.filename
     }) //Guardar el la información de mi formulario en mi modelo creado anteriormente
+    console.log(newFilm)
 
     const guardarModelo = await newFilm.save() //Guardar daos del modelo
 

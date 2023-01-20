@@ -1,9 +1,7 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
 const moongose = require('mongoose');
-const multer = require('multer');
-const fs = require('fs')
-const img = multer({ dest: 'public/images' });
+const path = require('path')
 
 //-----------------------
 const rutaPost = require('..//Routes/post.routes');
@@ -45,7 +43,7 @@ app.use(rutaPost) //RUTA POST
 //-----Middleware ()
 
 app.use(express.urlencoded({ extended: true })) //Middleware para decodificar la información del formulario
-app.use(express.static('./uploads/uploads'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 //Controlador del puerto
 const PORT = 3000
